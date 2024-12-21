@@ -1,25 +1,22 @@
-import { useState } from 'react';
-import { scheduleData } from '../constants/data';
+import { scheduleData } from "../constants/data";
 
 export default function Schedule() {
-  const [currentMonth] = useState(new Date().getMonth() + 1);
-
   const getCategoryStyle = (category?: string) => {
     switch (category) {
-      case 'live':
-        return 'text-yellow-700';
-      case 'event':
-        return 'text-yellow-600';
-      case 'media':
-        return 'text-yellow-800';
+      case "live":
+        return "text-yellow-700";
+      case "event":
+        return "text-yellow-600";
+      case "media":
+        return "text-yellow-800";
       default:
-        return 'text-yellow-700';
+        return "text-yellow-700";
     }
   };
 
   const isUpcoming = (dateStr: string) => {
     const today = new Date();
-    const [year, month, day] = dateStr.split('.').map(Number);
+    const [year, month, day] = dateStr.split(".").map(Number);
     const eventDate = new Date(year, month - 1, day);
     return eventDate >= today;
   };
@@ -28,10 +25,8 @@ export default function Schedule() {
     <section className="py-20 px-6 bg-yellow-50/50">
       <div className="container mx-auto">
         <div className="flex justify-between items-baseline mb-12">
-          <h2 className="text-3xl font-light text-yellow-800">SCHEDULE</h2>
-          <div className="text-sm text-yellow-600">
-            {currentMonth}月のスケジュール
-          </div>
+          <h2 className="text-3xl font-light text-yellow-800">映画公開予定</h2>
+          <div className="text-sm text-yellow-600">2025年のスケジュール</div>
         </div>
 
         <div className="space-y-8">
@@ -44,7 +39,7 @@ export default function Schedule() {
                 hover:border-yellow-200 
                 hover:-translate-y-0.5 
                 hover:bg-yellow-50/30 
-                ${isUpcoming(event.date) ? 'opacity-100' : 'opacity-50'}`}
+                ${isUpcoming(event.date) ? "opacity-100" : "opacity-50"}`}
             >
               {/* 日付部分 */}
               <div className="w-32">
@@ -69,11 +64,9 @@ export default function Schedule() {
                 <button
                   className="text-yellow-500 hover:text-yellow-700 transition-colors"
                   onClick={() =>
-                    window.scrollTo({ top: 0, behavior: 'smooth' })
+                    window.scrollTo({ top: 0, behavior: "smooth" })
                   }
-                >
-                  詳細 →
-                </button>
+                ></button>
               </div>
             </div>
           ))}

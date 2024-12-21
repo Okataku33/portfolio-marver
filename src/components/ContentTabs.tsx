@@ -1,5 +1,5 @@
-import { useState, useRef, useEffect } from 'react';
-import type { TabType } from '../constants/data';
+import { useState, useRef, useEffect } from "react";
+import type { TabType } from "../constants/data";
 
 interface YouTubeVideo {
   id: string;
@@ -13,7 +13,7 @@ interface Photo {
 }
 
 export default function ContentTabs() {
-  const [activeTab, setActiveTab] = useState<TabType>('videos');
+  const [activeTab, setActiveTab] = useState<TabType>("videos");
   const [selectedPhoto, setSelectedPhoto] = useState<number | null>(null);
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
   const [showLeftButton, setShowLeftButton] = useState(false);
@@ -30,11 +30,11 @@ export default function ContentTabs() {
         setShowRightButton(scrollLeft < scrollWidth - clientWidth - 20);
       };
 
-      container.addEventListener('scroll', checkScroll);
+      container.addEventListener("scroll", checkScroll);
       // 初期状態のチェック
       checkScroll();
 
-      return () => container.removeEventListener('scroll', checkScroll);
+      return () => container.removeEventListener("scroll", checkScroll);
     }
   }, []);
 
@@ -44,7 +44,7 @@ export default function ContentTabs() {
       const scrollAmount = container.clientWidth * 0.8;
       container.scrollBy({
         left: -scrollAmount,
-        behavior: 'smooth',
+        behavior: "smooth",
       });
     }
   };
@@ -55,59 +55,59 @@ export default function ContentTabs() {
       const scrollAmount = container.clientWidth * 0.8;
       container.scrollBy({
         left: scrollAmount,
-        behavior: 'smooth',
+        behavior: "smooth",
       });
     }
   };
 
   const videos: YouTubeVideo[] = [
     {
-      id: 'e5w2Ja8xkNw',
-      title: 'ライブ配信',
-      description: 'ライブ配信の様子',
+      id: "Qm6okfrpp8E",
+      title: "マーベル1",
+      description: "ホワットイフの動画",
     },
     {
-      id: 'pv2Jo-DqWSU',
-      title: 'YouTube動画1',
-      description: '動画の説明1',
+      id: "ljfdGYlcA_M",
+      title: "マーベル2",
+      description: "シャンチーの動画",
     },
     {
-      id: 'E35vIkR7apg',
-      title: 'YouTube動画2',
-      description: '動画の説明2',
+      id: "8d-wn4dnXmE",
+      title: "マーベル3",
+      description: "キャプテンアメリカの動画",
     },
     {
-      id: 'mL3o43bPmno',
-      title: 'YouTube動画3',
-      description: '動画の説明3',
+      id: "Fd7TpcBAeW8",
+      title: "マーベル4",
+      description: "サンダーボルツの動画",
     },
     {
-      id: 'plEE9KjZ7dI',
-      title: 'YouTube動画4',
-      description: '動画の説明4',
+      id: "7rmUFAgsI4M",
+      title: "マーベル5",
+      description: "アベンジャーズの動画",
     },
   ];
 
   const photos: Photo[] = [
     {
-      src: '/images/photo1.jpg',
-      alt: '写真タイトル1',
+      src: "/images/dummy.jpg",
+      alt: "写真タイトル1",
     },
     {
-      src: '/images/photo2.jpg',
-      alt: '写真タイトル2',
+      src: "/images/dummy.jpg",
+      alt: "写真タイトル2",
     },
     {
-      src: '/images/photo3.jpg',
-      alt: '写真タイトル3',
+      src: "/images/dummy.jpg",
+      alt: "写真タイトル3",
     },
     {
-      src: '/images/photo4.jpg',
-      alt: '写真タイトル4',
+      src: "/images/dummy.jpg",
+      alt: "写真タイトル4",
     },
     {
-      src: '/images/photo5.jpg',
-      alt: '写真タイトル5',
+      src: "/images/dummy.jpg",
+      alt: "写真タイトル5",
     },
   ];
 
@@ -116,7 +116,7 @@ export default function ContentTabs() {
       <div className="container mx-auto">
         {/* タブヘッダー */}
         <div className="flex justify-center gap-12 mb-12">
-          {['VIDEOS', 'PHOTOS', 'TWEETS'].map((tab) => (
+          {["VIDEOS", "PHOTOS", "TWEETS"].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab.toLowerCase() as TabType)}
@@ -124,8 +124,8 @@ export default function ContentTabs() {
                 border-b-2 hover:text-yellow-700
                 ${
                   activeTab === tab.toLowerCase()
-                    ? 'border-yellow-400 text-yellow-800'
-                    : 'border-transparent text-yellow-500'
+                    ? "border-yellow-400 text-yellow-800"
+                    : "border-transparent text-yellow-500"
                 }`}
             >
               {tab}
@@ -136,7 +136,7 @@ export default function ContentTabs() {
         {/* タブコンテンツ */}
         <div>
           {/* Photos Grid */}
-          {activeTab === 'photos' && (
+          {activeTab === "photos" && (
             <div className="relative group">
               <div
                 ref={scrollContainerRef}
@@ -207,7 +207,7 @@ export default function ContentTabs() {
           )}
 
           {/* Videos Grid - 同様のスクロール機能を追加 */}
-          {activeTab === 'videos' && (
+          {activeTab === "videos" && (
             <div className="relative group">
               <div className="overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-yellow-200 scrollbar-track-transparent">
                 <div className="flex gap-6 min-w-min">
@@ -244,7 +244,7 @@ export default function ContentTabs() {
           )}
 
           {/* Tweets */}
-          {activeTab === 'tweets' && (
+          {activeTab === "tweets" && (
             <div className="max-w-2xl mx-auto space-y-6">
               {Array.from({ length: 3 }).map((_, i) => (
                 <div
