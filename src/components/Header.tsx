@@ -4,13 +4,16 @@ import { auth, db, provider } from "../firebase";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Header() {
+interface HeaderProps {
+  uid: string | null;
+}
+
+export default function Header({ uid }: HeaderProps) {
   const [isAuth, setIsAuth] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [userInfo, setUserInfo] = useState<any>(null);
   const navigate = useNavigate();
 
-  // 初期化時に localStorage から isAuth の状態を取得
   useEffect(() => {
     const authStatus = localStorage.getItem("isAuth");
     if (authStatus === "true") {
@@ -111,7 +114,7 @@ export default function Header() {
               {isAuth && userInfo && (
                 <div className="flex items-center gap-4 ml-4 bg-amber-100 p-2 rounded-lg shadow-md border border-gray-200">
                   <img
-                    src={userInfo.photoURL || "/images/dummy.jpg"} // 写真がない場合のデフォルト画像
+                    src={userInfo.photoURL || "/images/dummy.jpg"}
                     alt="User Avatar"
                     className="w-12 h-12 rounded-full border-2"
                   />
@@ -151,7 +154,7 @@ export default function Header() {
             {isAuth && userInfo && (
               <div className="flex items-center gap-4 ml-4 bg-white p-2 rounded-lg shadow-md border border-gray-200">
                 <img
-                  src={userInfo.photoURL || "/images/dummy.jpg"} // 写真がない場合のデフォルト画像
+                  src={userInfo.photoURL || "/images/dummy.jpg"}
                   alt="User Avatar"
                   className="w-14 h-14 rounded-full border-2 border-yellow-600"
                 />

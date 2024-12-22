@@ -1,4 +1,3 @@
-// スケジュールイベントの型を定義
 export interface ScheduleEvent {
   date: string;
   time: string;
@@ -7,7 +6,6 @@ export interface ScheduleEvent {
   category?: "live" | "event" | "media";
 }
 
-// データを型付きの配列として定義
 export const scheduleData: ScheduleEvent[] = [
   {
     date: "2024.11.15",
@@ -34,44 +32,44 @@ export const scheduleData: ScheduleEvent[] = [
 
 export const qaData = [
   {
-    question: "好きな食べ物は？",
-    image: "/images/dummy.png",
-    answer: "aaa",
+    marvelId: "1",
+    image:
+      "https://lumiere-a.akamaihd.net/v1/images/th_avengers-iw_12450_12452_12450_12531_12510_12531_ad67ee83.jpeg?region=0,0,800,800&width=320",
   },
   {
-    question: "趣味は？",
-    image: "/images/dummy.png",
-    answer: "bbb",
+    marvelId: "2",
+    image:
+      "https://lumiere-a.akamaihd.net/v1/images/th_avengers-iw_12461_12515_12503_12486_12531_12539_1245_ebc624ef.jpeg?region=0,0,800,800&width=320",
   },
   {
-    question: "今ハマってることは？",
-    image: "/images/dummy.png",
-    answer: "ccc",
+    marvelId: "3",
+    image:
+      "https://lumiere-a.akamaihd.net/v1/images/th_avengers-iw_12473_12497_12452_12480_12540_12510_1253_8a3668c2.jpeg?region=0,0,800,800&width=320",
   },
   {
-    question: "好きな食べ物は？",
-    image: "/images/dummy.png",
-    answer: "aaa",
+    marvelId: "4",
+    image:
+      "https://lumiere-a.akamaihd.net/v1/images/th_avengers-iw_12477_12540_26955643.jpeg?region=0,0,800,800&width=320",
   },
   {
-    question: "趣味は？",
-    image: "/images/dummy.png",
-    answer: "bbb",
+    marvelId: "5",
+    image:
+      "https://lumiere-a.akamaihd.net/v1/images/th_avengers-iw_12495_12523_12463_591740bc.jpeg?region=0,0,800,800&width=320",
   },
   {
-    question: "今ハマってることは？",
-    image: "/images/dummy.png",
-    answer: "ccc",
+    marvelId: "6",
+    image:
+      "https://lumiere-a.akamaihd.net/v1/images/th_avengers-iw_12502_12521_12483_12463_12539_12454_1245_7e9fe59c.jpeg?region=0,0,800,800&width=320",
   },
   {
-    question: "好きな食べ物は？",
-    image: "/images/dummy.png",
-    answer: "aaa",
+    marvelId: "7",
+    image:
+      "https://lumiere-a.akamaihd.net/v1/images/th_avengers-iw_12489_12463_12479_12540_12539_12473_1248_c021937f.jpeg?region=0,0,800,800&width=320",
   },
   {
-    question: "趣味は？",
-    image: "/images/dummy.png",
-    answer: "bbb",
+    marvelId: "8",
+    image:
+      "https://lumiere-a.akamaihd.net/v1/images/th_avengers-iw_12502_12521_12483_12463_12497_12531_1246_0ded8ee5.jpeg?region=0,0,800,800&width=320",
   },
 ] as const;
 
