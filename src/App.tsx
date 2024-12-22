@@ -46,42 +46,43 @@ function App() {
 
   return (
     <Router>
-      <Header uid={uid} />
-      <div
-        className={`fixed inset-0 bg-yellow-50 z-50 transition-opacity duration-1000 ease-in-out
+      <div className="bg-gradient-to-b bg-slate-950 min-h-screen text-white">
+        <Header uid={uid} />
+        <div
+          className={`fixed inset-0 bg-slate-950 z-50 transition-opacity duration-1000 ease-in-out
           ${isTransitioning ? "opacity-100" : "opacity-0 pointer-events-none"}`}
-      />
-      <div
-        className={`min-h-screen bg-gradient-to-b from-white via-yellow-50/20 to-yellow-100/20
-          transition-opacity duration-1000 ease-in-out
+        />
+        <div
+          className={`min-h-screen bg-gradient-to-b from-white transition-opacity duration-1000 ease-in-out
           ${isTransitioning ? "opacity-0" : "opacity-100"}`}
-      >
-        <Routes>
-          <Route
-            path="/qanda"
-            element={uid ? <QandA uid={uid} /> : <div>Loading...</div>}
-          />
+        >
+          <Routes>
+            <Route
+              path="/qanda"
+              element={uid ? <QandA uid={uid} /> : <div>Loading...</div>}
+            />
 
-          <Route
-            path="/"
-            element={
-              <>
-                <MainVisual />
-                <main className="relative">
-                  <div className="space-y-32 md:space-y-15">
-                    <Schedule />
-                    <ContentTabs />
-                  </div>
-                  <div className="absolute inset-0 -z-10 pointer-events-none">
-                    <div className="absolute top-1/4 left-0 w-64 h-64 bg-yellow-100/20 rounded-full blur-3xl" />
-                    <div className="absolute top-2/3 right-0 w-96 h-96 bg-yellow-200/10 rounded-full blur-3xl" />
-                  </div>
-                </main>
-                <Footer />
-              </>
-            }
-          />
-        </Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <MainVisual />
+                  <main className="relative">
+                    <div>
+                      <Schedule />
+                      <ContentTabs />
+                    </div>
+                    <div className="absolute inset-0 -z-10 pointer-events-none">
+                      <div className="absolute top-1/4 left-0 w-64 h-64 bg-yellow-100/20 rounded-full blur-3xl" />
+                      <div className="absolute top-2/3 right-0 w-96 h-96 bg-yellow-200/10 rounded-full blur-3xl" />
+                    </div>
+                  </main>
+                  <Footer />
+                </>
+              }
+            />
+          </Routes>
+        </div>
       </div>
     </Router>
   );

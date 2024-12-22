@@ -1,6 +1,6 @@
 export default function LoadingSpinner() {
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-yellow-50">
+    <div className="fixed inset-0 flex items-center justify-center bg-slate-950">
       <div className="relative">
         {/* アイアンマンの画像 */}
         <div className="w-32 h-32 animate-spin">
@@ -38,7 +38,7 @@ export default function LoadingSpinner() {
 
         {/* ローディングテキスト */}
         <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap">
-          <p className="text-yellow-600 text-sm animate-pulse">
+          <p className="text-rose-600 text-text-sm animate-pulse">
             Now Loading...
           </p>
         </div>

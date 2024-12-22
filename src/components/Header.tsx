@@ -79,9 +79,6 @@ export default function Header({ uid }: HeaderProps) {
   // メニュー項目の定義
   const menuItems = [
     { name: "HOME", href: "/" },
-    { name: "SCHEDULE", href: "#schedule" },
-    { name: "VIDEO", href: "#video" },
-    { name: "PHOTO", href: "#photo" },
     { name: "Q&A", href: "#qa" },
     ...(isAuth
       ? [{ name: "ログアウト", href: "#", onClick: handleLogout }]
@@ -104,7 +101,7 @@ export default function Header({ uid }: HeaderProps) {
                     key={item.name}
                     href={item.href}
                     onClick={item.onClick}
-                    className="text-sm text-stone-50 hover:text-yellow-600 transition-colors font-[PressStart2P]"
+                    className="text-sm text-stone-50 hover:text-teal-400 transition-colors font-[PressStart2P]"
                   >
                     {item.name}
                   </a>
@@ -112,15 +109,12 @@ export default function Header({ uid }: HeaderProps) {
               </div>
               {/* ユーザー情報表示 */}
               {isAuth && userInfo && (
-                <div className="flex items-center gap-4 ml-4 bg-amber-100 p-2 rounded-lg shadow-md border border-gray-200">
+                <div className="flex items-center ml-4 p-2 rounded-lg shadow-md">
                   <img
                     src={userInfo.photoURL || "/images/dummy.jpg"}
                     alt="User Avatar"
                     className="w-12 h-12 rounded-full border-2"
                   />
-                  <div className="text-xs text-stone-50 font-[PressStart2P]">
-                    <p className="font-semibold text-sm">{userInfo.name}</p>
-                  </div>
                 </div>
               )}
             </div>
@@ -130,7 +124,7 @@ export default function Header({ uid }: HeaderProps) {
 
       {/* 固定ヘッダー（スクロール後） */}
       <div
-        className={`fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm z-50 transition-all duration-300 transform
+        className={`fixed top-0 left-0 right-0 bg-slate-950 backdrop-blur-sm shadow-sm z-50 transition-all duration-300 transform
           ${isScrolled ? "translate-y-0" : "-translate-y-full"}`}
       >
         <nav className="container mx-auto py-4 px-4 flex justify-between items-center">
@@ -152,16 +146,12 @@ export default function Header({ uid }: HeaderProps) {
             </div>
             {/* ユーザー情報表示 */}
             {isAuth && userInfo && (
-              <div className="flex items-center gap-4 ml-4 bg-white p-2 rounded-lg shadow-md border border-gray-200">
+              <div className="flex items-center ml-4 p-2 rounded-lg shadow-md">
                 <img
                   src={userInfo.photoURL || "/images/dummy.jpg"}
                   alt="User Avatar"
-                  className="w-14 h-14 rounded-full border-2 border-yellow-600"
+                  className="w-14 h-14 rounded-full border-2"
                 />
-                <div className="text-sm text-stone-50 font-[PressStart2P]">
-                  <p className="font-semibold text-lg">{userInfo.name}</p>
-                  <p className="text-xs text-gray-500">{userInfo.email}</p>
-                </div>
               </div>
             )}
           </div>

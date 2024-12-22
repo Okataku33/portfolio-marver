@@ -112,20 +112,20 @@ export default function ContentTabs() {
   ];
 
   return (
-    <section className="py-20 px-6 bg-yellow-50/50">
+    <section className="py-20 px-6 bg-slate-950">
       <div className="container mx-auto">
         {/* タブヘッダー */}
         <div className="flex justify-center gap-12 mb-12">
-          {["VIDEOS", "PHOTOS", "TWEETS"].map((tab) => (
+          {["VIDEOS", "PHOTOS"].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab.toLowerCase() as TabType)}
               className={`text-xl font-light pb-2 transition-all duration-300 
-                border-b-2 hover:text-yellow-700
+                border-b-2 hover:text-cyan-400
                 ${
                   activeTab === tab.toLowerCase()
-                    ? "border-yellow-400 text-yellow-800"
-                    : "border-transparent text-yellow-500"
+                    ? "border-cyan-400 text-cyan-400"
+                    : "border-transparent text-cyan-400"
                 }`}
             >
               {tab}
@@ -140,14 +140,14 @@ export default function ContentTabs() {
             <div className="relative group">
               <div
                 ref={scrollContainerRef}
-                className="overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-yellow-200 scrollbar-track-transparent"
+                className="overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-cyan-200 scrollbar-track-transparent"
               >
                 <div className="flex gap-6 min-w-min">
                   {photos.map((photo, i) => (
                     <div
                       key={i}
                       onClick={() => setSelectedPhoto(i)}
-                      className="flex-none w-[calc(50%-12px)] md:w-[calc(50%-12px)] max-w-[600px] aspect-[1/1] bg-white p-2 rounded-lg cursor-pointer
+                      className="flex-none w-[calc(50%-12px)] md:w-[calc(50%-12px)] max-w-[600px] aspect-[1/1] bg-white rounded-lg cursor-pointer
                         transition-all duration-300 hover:-translate-y-1
                         hover:shadow-[0_4px_20px_rgba(255,200,50,0.15)]"
                     >
@@ -175,14 +175,14 @@ export default function ContentTabs() {
                 <button
                   onClick={handleScrollLeft}
                   className="absolute left-0 top-1/2 -translate-y-1/2 w-12 h-24
-                    bg-gradient-to-r from-yellow-100/90 to-transparent
-                    hover:from-yellow-200/90 transition-all duration-300
+                    bg-gradient-to-r to-transparent
+                    hover:text-cyan-400 transition-all duration-300
                     cursor-pointer flex items-center justify-start pl-2
                     opacity-0 group-hover:opacity-100"
                   aria-label="前の写真を見る"
                 >
                   <div className="w-8 h-8 flex items-center justify-center bg-white/80 rounded-full">
-                    <div className="w-3 h-3 border-l-2 border-t-2 border-yellow-400 rotate-[-45deg]" />
+                    <div className="w-3 h-3 border-l-2 border-t-2 rotate-[-45deg]" />
                   </div>
                 </button>
               )}
@@ -192,14 +192,14 @@ export default function ContentTabs() {
                 <button
                   onClick={handleScrollRight}
                   className="absolute right-0 top-1/2 -translate-y-1/2 w-12 h-24
-                    bg-gradient-to-l from-yellow-100/90 to-transparent
-                    hover:from-yellow-200/90 transition-all duration-300
+                    bg-gradient-to-l to-transparent
+                    hover:transition-all duration-300
                     cursor-pointer flex items-center justify-end pr-2
                     opacity-0 group-hover:opacity-100"
                   aria-label="次の写真を見る"
                 >
                   <div className="w-8 h-8 flex items-center justify-center bg-white/80 rounded-full">
-                    <div className="w-3 h-3 border-r-2 border-t-2 border-yellow-400 rotate-45" />
+                    <div className="w-3 h-3 border-r-2 border-t-2 rotate-45" />
                   </div>
                 </button>
               )}
@@ -209,12 +209,12 @@ export default function ContentTabs() {
           {/* Videos Grid - 同様のスクロール機能を追加 */}
           {activeTab === "videos" && (
             <div className="relative group">
-              <div className="overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-yellow-200 scrollbar-track-transparent">
+              <div className="overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-cyan-200 scrollbar-track-transparent">
                 <div className="flex gap-6 min-w-min">
                   {videos.map((video, i) => (
                     <div
                       key={i}
-                      className="flex-none w-[calc(50%-12px)] md:w-[calc(50%-12px)] max-w-[500px] aspect-video bg-white p-2 rounded-lg
+                      className="flex-none w-[calc(50%-12px)] md:w-[calc(50%-12px)] max-w-[500px] aspect-video bg-white rounded-lg
                         transition-all duration-300 hover:-translate-y-1
                         hover:shadow-[0_4px_20px_rgba(255,200,50,0.15)] cursor-pointer"
                       onClick={() => setSelectedVideo(video.id)}
@@ -226,7 +226,7 @@ export default function ContentTabs() {
                           className="w-full h-full object-cover"
                         />
                         <div className="absolute inset-0 flex items-center justify-center bg-black/20 transition-opacity group-hover:bg-black/40">
-                          <div className="w-16 h-16 flex items-center justify-center rounded-full bg-yellow-400/90 text-white">
+                          <div className="w-16 h-16 flex items-center justify-center rounded-full text-white border-2 border-cyan-500 bg-cyan-300/40">
                             ▶
                           </div>
                           <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
@@ -240,25 +240,6 @@ export default function ContentTabs() {
                   ))}
                 </div>
               </div>
-            </div>
-          )}
-
-          {/* Tweets */}
-          {activeTab === "tweets" && (
-            <div className="max-w-2xl mx-auto space-y-6">
-              {Array.from({ length: 3 }).map((_, i) => (
-                <div
-                  key={i}
-                  className="bg-white p-6 rounded-lg
-                    transition-all duration-300 hover:-translate-y-1
-                    hover:shadow-[0_4px_20px_rgba(255,200,50,0.15)]"
-                >
-                  <div className="text-yellow-600 mb-2">2024.10.28</div>
-                  <p className="text-lg text-yellow-800">
-                    ツイート内容がここに表示されます。
-                  </p>
-                </div>
-              ))}
             </div>
           )}
         </div>
@@ -276,8 +257,7 @@ export default function ContentTabs() {
                 className="w-full h-auto rounded-lg"
               />
               <button
-                className="absolute top-4 right-4 w-10 h-10 rounded-full bg-yellow-400/90 
-                  text-yellow-900 flex items-center justify-center"
+                className="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center"
                 onClick={(e) => {
                   e.stopPropagation();
                   setSelectedPhoto(null);
@@ -303,8 +283,7 @@ export default function ContentTabs() {
                 allowFullScreen
               />
               <button
-                className="absolute -top-10 right-0 w-10 h-10 rounded-full bg-yellow-400/90 
-                  text-yellow-900 flex items-center justify-center"
+                className="absolute -top-10 right-0 w-10 h-10 rounded-fulls flex items-center justify-center"
                 onClick={(e) => {
                   e.stopPropagation();
                   setSelectedVideo(null);

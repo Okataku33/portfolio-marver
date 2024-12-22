@@ -30,7 +30,7 @@ export default function MainVisual() {
   };
 
   return (
-    <section className="pt-32 min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-black overflow-hidden relative">
+    <section className="pt-32 min-h-screen flex items-center justify-center bg-slate-950 overflow-hidden relative">
       {showButton && (
         <div className="absolute bottom-16 text-center w-full z-10">
           <button

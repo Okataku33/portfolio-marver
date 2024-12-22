@@ -145,13 +145,13 @@ const QandA: React.FC<QandAProps> = ({ uid }) => {
           <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
             <div
               ref={popupRef}
-              className="bg-indigo-900 rounded-xl p-8 max-w-lg w-full shadow-2xl"
+              className="bg-sky-950 rounded-xl p-8 max-w-lg w-full shadow-2xl"
             >
               <div className="mb-6">
                 <img
                   src={qaData[selectedItem].image}
                   alt={qaData[selectedItem].marvelId}
-                  className="w-full h-64 object-cover rounded-lg border-4 border-indigo-800"
+                  className="w-full h-64 object-cover rounded-lg border-4 border-sky-900"
                 />
               </div>
 

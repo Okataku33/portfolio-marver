@@ -1,4 +1,4 @@
-import { Instagram, Youtube, Facebook, Music } from 'lucide-react';
+import { Instagram, Youtube, Facebook, Music } from "lucide-react";
 
 // Xのアイコンをカスタムコンポーネントとして作成
 const XIcon = ({ className }: { className?: string }) => (
@@ -14,26 +14,26 @@ const XIcon = ({ className }: { className?: string }) => (
 
 export default function Footer() {
   const snsLinks = [
-    { name: 'X', icon: <XIcon className="w-5 h-5" />, url: '#' },
-    { name: 'Instagram', icon: <Instagram className="w-6 h-6" />, url: '#' },
-    { name: 'YouTube', icon: <Youtube className="w-6 h-6" />, url: '#' },
-    { name: 'Facebook', icon: <Facebook className="w-6 h-6" />, url: '#' },
-    { name: 'TikTok', icon: <Music className="w-6 h-6" />, url: '#' },
+    { name: "X", icon: <XIcon className="w-5 h-5" />, url: "#" },
+    { name: "Instagram", icon: <Instagram className="w-6 h-6" />, url: "#" },
+    { name: "YouTube", icon: <Youtube className="w-6 h-6" />, url: "#" },
+    { name: "Facebook", icon: <Facebook className="w-6 h-6" />, url: "#" },
+    { name: "TikTok", icon: <Music className="w-6 h-6" />, url: "#" },
   ];
 
   const menuLinks = [
-    { name: 'プライバシーポリシー', url: '#' },
-    { name: '会員規約', url: '#' },
-    { name: '特定商取引法に関する表記', url: '#' },
-    { name: '支払い期日/解約方法について', url: '#' },
-    { name: '推奨環境', url: '#' },
-    { name: 'ヘルプ / お問い合わせ', url: '#' },
-    { name: '会員登録', url: '#' },
-    { name: 'ログイン', url: '#' },
+    { name: "プライバシーポリシー", url: "#" },
+    { name: "会員規約", url: "#" },
+    { name: "特定商取引法に関する表記", url: "#" },
+    { name: "支払い期日/解約方法について", url: "#" },
+    { name: "推奨環境", url: "#" },
+    { name: "ヘルプ / お問い合わせ", url: "#" },
+    { name: "会員登録", url: "#" },
+    { name: "ログイン", url: "#" },
   ];
 
   return (
-    <footer className="py-16 bg-yellow-50/50">
+    <footer className="py-16 bg-slate-950">
       <div className="container mx-auto px-6">
         {/* SNSアイコン */}
         <div className="flex justify-center gap-8 mb-12">
@@ -41,7 +41,7 @@ export default function Footer() {
             <a
               key={sns.name}
               href={sns.url}
-              className="text-yellow-700/70 hover:text-yellow-800 transition-colors"
+              className="hover:text-cyan-400 transition-colors"
               target="_blank"
               rel="noopener noreferrer"
               aria-label={sns.name}
@@ -57,7 +57,7 @@ export default function Footer() {
             <a
               key={link.name}
               href={link.url}
-              className="text-yellow-700/70 hover:text-yellow-800 transition-colors"
+              className="hover:text-cyan-400 transition-colors"
             >
               {link.name}
             </a>
@@ -65,9 +65,9 @@ export default function Footer() {
         </div>
 
         {/* コピーライト */}
-        <div className="text-center text-sm text-yellow-700/70">
+        <div className="text-center text-sm">
           <p>
-            © Riri Mizuki <a href="#" className="hover:text-yellow-800"></a>
+            © Marver Daisuki <a href="#" className="hover:text-cyan-400"></a>
           </p>
         </div>
       </div>
