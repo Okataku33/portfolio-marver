@@ -45,7 +45,8 @@ function App() {
   }
 
   return (
-    <Router>
+    <Router basename="/portfolio-marver">
+      {/* サブディレクトリ用に basename を設定 */}
       <div className="bg-gradient-to-b bg-slate-950 min-h-screen text-white">
         <Header />
         <div
@@ -61,7 +62,6 @@ function App() {
               path="/qanda"
               element={uid ? <QandA uid={uid} /> : <div>Loading...</div>}
             />
-
             <Route
               path="/"
               element={
