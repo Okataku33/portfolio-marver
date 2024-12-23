@@ -107,7 +107,10 @@ export default function Header() {
               {isAuth && userInfo && (
                 <div className="flex items-center ml-4 p-2 rounded-lg shadow-md">
                   <img
-                    src={userInfo.photoURL || "/images/dummy.jpg"}
+                    src={
+                      userInfo.photoURL ||
+                      "${import.meta.env.BASE_URL}images/dummy.png"
+                    }
                     alt="User Avatar"
                     className="w-12 h-12 rounded-full border-2"
                   />
@@ -144,7 +147,10 @@ export default function Header() {
             {isAuth && userInfo && (
               <div className="flex items-center ml-4 p-2 rounded-lg shadow-md">
                 <img
-                  src={userInfo.photoURL || "/images/dummy.jpg"}
+                  src={
+                    userInfo.photoURL ||
+                    "${import.meta.env.BASE_URL}images/dummy.png"
+                  }
                   alt="User Avatar"
                   className="w-14 h-14 rounded-full border-2"
                 />

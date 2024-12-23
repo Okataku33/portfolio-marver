@@ -90,23 +90,23 @@ export default function ContentTabs() {
 
   const photos: Photo[] = [
     {
-      src: "/images/dummy.jpg",
+      src: "${import.meta.env.BASE_URL}images/dummy.png",
       alt: "写真タイトル1",
     },
     {
-      src: "/images/dummy.jpg",
+      src: "${import.meta.env.BASE_URL}images/dummy.png",
       alt: "写真タイトル2",
     },
     {
-      src: "/images/dummy.jpg",
+      src: "${import.meta.env.BASE_URL}images/dummy.png",
       alt: "写真タイトル3",
     },
     {
-      src: "/images/dummy.jpg",
+      src: "${import.meta.env.BASE_URL}images/dummy.png",
       alt: "写真タイトル4",
     },
     {
-      src: "/images/dummy.jpg",
+      src: "${import.meta.env.BASE_URL}images/dummy.png",
       alt: "写真タイトル5",
     },
   ];

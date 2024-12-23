@@ -5,7 +5,7 @@ export default function LoadingSpinner() {
         {/* アイアンマンの画像 */}
         <div className="w-32 h-32 animate-spin">
           <img
-            src="/images/ironman.png" // アイアンマンの画像パスを指定
+            src="${import.meta.env.BASE_URL}images/ironman.png" // アイアンマンの画像パスを指定
             alt="Iron Man"
             className="w-full h-full object-contain"
           />
@@ -14,7 +14,7 @@ export default function LoadingSpinner() {
         {/* 周りの小さなアイアンマンのアニメーション（画像を使う場合） */}
         <div className="absolute -top-8 -left-8 w-16 h-16 animate-bounce delay-100">
           <img
-            src="/images/ironman.png"
+            src="${import.meta.env.BASE_URL}images/ironman.png"
             alt="Iron Man"
             className="w-full h-full object-contain"
           />
@@ -22,7 +22,7 @@ export default function LoadingSpinner() {
 
         <div className="absolute -top-4 -right-8 w-12 h-12 animate-bounce delay-200">
           <img
-            src="/images/ironman.png"
+            src="${import.meta.env.BASE_URL}images/ironman.png"
             alt="Iron Man"
             className="w-full h-full object-contain"
           />
@@ -30,7 +30,7 @@ export default function LoadingSpinner() {
 
         <div className="absolute -bottom-4 -left-6 w-14 h-14 animate-bounce delay-300">
           <img
-            src="/images/ironman.png"
+            src="${import.meta.env.BASE_URL}images/ironman.png"
             alt="Iron Man"
             className="w-full h-full object-contain"
           />
