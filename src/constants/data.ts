@@ -1,32 +1,27 @@
 export interface ScheduleEvent {
   date: string;
-  time: string;
   title: string;
   description: string;
-  category?: "live" | "event" | "media";
 }
 
 export const scheduleData: ScheduleEvent[] = [
   {
-    date: "2024.11.15",
-    time: "19:00",
-    title: "ライブイベント",
-    description: "渋谷O-EAST",
-    category: "live",
+    date: "2025.5.2",
+    title: "アベンジャーズ: カン・ダイナスティ",
+    description:
+      "ヴィラン「カン・ザ・コンカーラー」が主要な敵として登場しアベンジャーズが新たな戦いに挑む。",
   },
   {
-    date: "2024.11.17",
-    time: "14:00",
-    title: "握手会",
-    description: "池袋サンシャインシティ",
-    category: "event",
+    date: "2025.11.7",
+    title: "デッドプール3",
+    description:
+      "MCUに正式に登場するデッドプールがウルヴァリンと共に新たな冒険に乗り出す。",
   },
   {
-    date: "2024.11.21",
-    time: "20:00",
-    title: "ラジオ出演",
-    description: "FM東京",
-    category: "media",
+    date: "2025.12.19",
+    title: "アベンジャーズ: シークレット・ウォーズ",
+    description:
+      "アベンジャーズが次々と集結し、「シークレット・ウォーズ」と呼ばれる壮大な戦争に突入する。",
   },
 ];
 

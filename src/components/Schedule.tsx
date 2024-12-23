@@ -32,16 +32,11 @@ export default function Schedule() {
               {/* 日付部分 */}
               <div className="w-32">
                 <div className="text-2xl font-light">{event.date}</div>
-                <div>{event.time}</div>
               </div>
 
               {/* イベント詳細部分 */}
               <div className="flex-1">
-                <h3
-                  className={`text-xl mb-2 ${getCategoryStyle(event.category)}`}
-                >
-                  {event.title}
-                </h3>
+                <h3 className={`text-xl mb-2`}>{event.title}</h3>
                 <p>{event.description}</p>
               </div>
 

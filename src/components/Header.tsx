@@ -79,7 +79,7 @@ export default function Header({ uid }: HeaderProps) {
   // メニュー項目の定義
   const menuItems = [
     { name: "HOME", href: "/" },
-    { name: "Q&A", href: "#qa" },
+    { name: "Q&A", href: "/qanda" },
     ...(isAuth
       ? [{ name: "ログアウト", href: "#", onClick: handleLogout }]
       : [{ name: "ログイン", href: "#", onClick: loginInWithGoogle }]),
