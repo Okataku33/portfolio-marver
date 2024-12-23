@@ -4,11 +4,7 @@ import { auth, db, provider } from "../firebase";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-interface HeaderProps {
-  uid: string | null;
-}
-
-export default function Header({ uid }: HeaderProps) {
+export default function Header() {
   const [isAuth, setIsAuth] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [userInfo, setUserInfo] = useState<any>(null);

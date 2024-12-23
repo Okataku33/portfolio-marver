@@ -1,8 +1,6 @@
 import { scheduleData } from "../constants/data";
 
 export default function Schedule() {
-  const getCategoryStyle = (category?: string) => {};
-
   const isUpcoming = (dateStr: string) => {
     const today = new Date();
     const [year, month, day] = dateStr.split(".").map(Number);

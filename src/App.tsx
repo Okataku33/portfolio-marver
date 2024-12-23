@@ -47,7 +47,7 @@ function App() {
   return (
     <Router>
       <div className="bg-gradient-to-b bg-slate-950 min-h-screen text-white">
-        <Header uid={uid} />
+        <Header />
         <div
           className={`fixed inset-0 bg-slate-950 z-50 transition-opacity duration-1000 ease-in-out
           ${isTransitioning ? "opacity-100" : "opacity-0 pointer-events-none"}`}
