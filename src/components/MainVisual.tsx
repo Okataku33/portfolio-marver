@@ -49,7 +49,7 @@ export default function MainVisual() {
       <div className="absolute left-0 top-10 w-full">
         <div className="animate-slide-left-to-right">
           <img
-            src="${import.meta.env.BASE_URL}images/ironman.png"
+            src={`${import.meta.env.BASE_URL}images/ironman.png`}
             alt="Iron Man"
             className="w-[300px] h-auto object-cover"
           />
