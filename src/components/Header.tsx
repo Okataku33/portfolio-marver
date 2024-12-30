@@ -75,7 +75,7 @@ export default function Header() {
   // メニュー項目の定義
   const menuItems = [
     { name: "HOME", href: "/portfolio-marver/" },
-    { name: "Q&A", href: "/portfolio-marver/qanda/" },
+    { name: "Q&A", href: "/qanda" },
     ...(isAuth
       ? [{ name: "ログアウト", href: "#", onClick: handleLogout }]
       : [{ name: "ログイン", href: "#", onClick: loginInWithGoogle }]),
