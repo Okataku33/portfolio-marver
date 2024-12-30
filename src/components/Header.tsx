@@ -2,7 +2,7 @@ import { signInWithPopup } from "firebase/auth";
 import { doc, setDoc, getDoc } from "firebase/firestore";
 import { auth, db, provider } from "../firebase";
 import { useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom"; // Linkをインポート
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const [isAuth, setIsAuth] = useState<boolean>(false);
@@ -93,14 +93,14 @@ export default function Header() {
             <div className="flex items-center">
               <div className="flex gap-12">
                 {menuItems.map((item) => (
-                  <Link
+                  <a
                     key={item.name}
-                    to={item.href}
+                    href={item.href}
                     onClick={item.onClick}
                     className="text-sm text-stone-50 hover:text-teal-400 transition-colors font-[PressStart2P]"
                   >
                     {item.name}
-                  </Link>
+                  </a>
                 ))}
               </div>
               {/* ユーザー情報表示 */}
@@ -133,14 +133,14 @@ export default function Header() {
           <div className="flex items-center">
             <div className="flex gap-12">
               {menuItems.map((item) => (
-                <Link
+                <a
                   key={item.name}
-                  to={item.href}
+                  href={item.href}
                   onClick={item.onClick}
                   className="text-sm text-stone-50 hover:text-yellow-600 transition-colors font-[PressStart2P]"
                 >
                   {item.name}
-                </Link>
+                </a>
               ))}
             </div>
             {/* ユーザー情報表示 */}
