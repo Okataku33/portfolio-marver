@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { qaData } from "../constants/data";
 import { getDoc, updateDoc, doc, arrayRemove } from "firebase/firestore";
 import { db } from "../firebase";
@@ -12,6 +13,8 @@ const QandA: React.FC<QandAProps> = ({ uid }) => {
   const [isFavorited, setIsFavorited] = useState<boolean>(false);
   const [userInfo, setUserInfo] = useState<any>(null);
   const popupRef = useRef<HTMLDivElement | null>(null);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUserInfo = async () => {
@@ -122,11 +125,21 @@ const QandA: React.FC<QandAProps> = ({ uid }) => {
   if (!uid) {
     return (
       <section className="pt-32 min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-black overflow-hidden relative">
-        <div className="container mx-auto max-w-3xl">
+        <div className="container mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-light mb-12 text-stone-50">
             ログインが必要です
           </h2>
-          <p className="text-white">Q&Aを利用するにはログインしてください。</p>
+          <p className="text-white mb-8">
+            Q&Aを利用するにはログインしてください。
+          </p>
+          <div className="absolute bottom-16 text-center w-full z-10">
+            <button
+              onClick={() => navigate("/")} // HOMEに戻る
+              className="bg-teal-400 text-white px-8 py-4 rounded-xl text-2xl font-bold shadow-xl hover:bg-teal-700 transform transition-all duration-300 ease-out hover:scale-105 hover:shadow-2xl"
+            >
+              HOMEに戻る
+            </button>
+          </div>
         </div>
       </section>
     );
