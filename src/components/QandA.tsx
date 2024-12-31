@@ -23,7 +23,11 @@ const QandA: React.FC<QandAProps> = ({ uid }) => {
         }
       }
     };
-    fetchUserInfo();
+    if (uid) {
+      fetchUserInfo();
+    } else {
+      setUserInfo(null);
+    }
   }, [uid]);
 
   const handleAddToFavorites = async () => {
@@ -115,6 +119,19 @@ const QandA: React.FC<QandAProps> = ({ uid }) => {
     };
   }, []);
 
+  if (!uid) {
+    return (
+      <section className="pt-32 min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-black overflow-hidden relative">
+        <div className="container mx-auto max-w-3xl">
+          <h2 className="text-3xl font-light mb-12 text-stone-50">
+            ログインが必要です
+          </h2>
+          <p className="text-white">Q&Aを利用するにはログインしてください。</p>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="pt-32 min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-black overflow-hidden relative">
       <div className="container mx-auto max-w-3xl">
@@ -178,4 +195,5 @@ const QandA: React.FC<QandAProps> = ({ uid }) => {
     </section>
   );
 };
+
 export default QandA;

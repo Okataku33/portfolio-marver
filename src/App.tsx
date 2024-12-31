@@ -58,10 +58,7 @@ function App() {
           ${isTransitioning ? "opacity-0" : "opacity-100"}`}
         >
           <Routes>
-            <Route
-              path="/qanda"
-              element={uid ? <QandA uid={uid} /> : <div>Loading...</div>}
-            />
+            <Route path="/qanda" element={<QandA uid={uid || ""} />} />
             <Route
               path="/"
               element={
