@@ -125,16 +125,16 @@ const QandA: React.FC<QandAProps> = ({ uid }) => {
   if (!uid) {
     return (
       <section className="pt-32 min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-black overflow-hidden relative">
-        <div className="container mx-auto max-w-3xl text-center">
+        <div className="container mx-auto max-w-3xl text-center flex flex-col items-center justify-center">
           <h2 className="text-3xl font-light mb-12 text-stone-50">
             ログインが必要です
           </h2>
           <p className="text-white mb-8">
             Q&Aを利用するにはログインしてください。
           </p>
-          <div className="absolute bottom-16 text-center w-full z-10">
+          <div className="flex items-center justify-center w-full">
             <button
-              onClick={() => navigate("/")} // HOMEに戻る
+              onClick={() => navigate("/")}
               className="bg-teal-400 text-white px-8 py-4 rounded-xl text-2xl font-bold shadow-xl hover:bg-teal-700 transform transition-all duration-300 ease-out hover:scale-105 hover:shadow-2xl"
             >
               HOMEに戻る
